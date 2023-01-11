@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/rates")
 class RateController {
     @Autowired
     RateService service
 
-    @PostMapping("/load")
+    @PostMapping("/")
     void loadData() {
         service.gatherData()
     }
@@ -20,7 +20,7 @@ class RateController {
         service.getSingleCurrency(id)
     }
 
-    @DeleteMapping("/clear")
+    @DeleteMapping("/")
     void clearData() {
         service.clearData()
     }
