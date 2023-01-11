@@ -15,15 +15,16 @@ class RateController {
         service.gatherData()
     }
 
+    @DeleteMapping("/")
+    void clearData() {
+        service.clearData()
+    }
+
     @GetMapping("/{id}")
     List<Currency> findCurrency(@PathVariable String id) {
         service.getSingleCurrency(id)
     }
 
-    @DeleteMapping("/")
-    void clearData() {
-        service.clearData()
-    }
 
     @GetMapping("/latest")
     List<Currency> findLatest() {
