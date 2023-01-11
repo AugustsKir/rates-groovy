@@ -2,23 +2,16 @@ package com.project.ratesgroovy.exchangerates
 
 import com.project.ratesgroovy.exchangerates.domain.Currency
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/rates")
+@RequestMapping("/api/")
 class RateController {
     @Autowired
     RateService service
-
-    @PostMapping("")
-    void loadData() {
-        service.gatherData()
-    }
-
-    @DeleteMapping("")
-    void clearData() {
-        service.clearData()
-    }
 
     @GetMapping("/{name}")
     List<Currency> findCurrency(@PathVariable String name) {
