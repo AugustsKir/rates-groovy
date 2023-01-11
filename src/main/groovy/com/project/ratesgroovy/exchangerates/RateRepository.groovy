@@ -11,6 +11,6 @@ interface RateRepository extends JpaRepository<Currency, String> {
     @Query("SELECT r FROM Currency r where lower(r.currency) like lower(:name) ")
     List<Currency> findByName(@Param("name") String name)
 
-    @Query("select r from Currency r where r.date = (select max(r.date) from Currency ) ")
+    @Query("select r from Currency r where r.date = (select max(date) from Currency ) ")
     List<Currency> findLatest()
 }

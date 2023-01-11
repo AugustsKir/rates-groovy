@@ -10,19 +10,19 @@ class RateController {
     @Autowired
     RateService service
 
-    @PostMapping("/")
+    @PostMapping("")
     void loadData() {
         service.gatherData()
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping("")
     void clearData() {
         service.clearData()
     }
 
-    @GetMapping("/{id}")
-    List<Currency> findCurrency(@PathVariable String id) {
-        service.getSingleCurrency(id)
+    @GetMapping("/{name}")
+    List<Currency> findCurrency(@PathVariable String name) {
+        service.getSingleCurrency(name)
     }
 
 
