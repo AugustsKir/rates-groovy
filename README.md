@@ -56,7 +56,6 @@ password: admin
 ```
 user: user
 password: password
-
 ```
 
 ## About
