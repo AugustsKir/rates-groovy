@@ -1,6 +1,10 @@
 package com.project.ratesgroovy.exchangerates.domain
 
-import jakarta.persistence.*
+
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
 
 import java.time.LocalDate
 
@@ -8,8 +12,8 @@ import java.time.LocalDate
 @Table(name = "currency_rates")
 class Currency {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id
+    String id
+
 
     @Column
     String currency
@@ -19,10 +23,11 @@ class Currency {
     @Column
     LocalDate date
 
-    Currency(String currency, BigDecimal rate, LocalDate date) {
+    Currency(String currency, BigDecimal rate, LocalDate date, String id) {
         this.currency = currency
         this.rate = rate
         this.date = date
+        this.id = id
     }
 
     Currency() {

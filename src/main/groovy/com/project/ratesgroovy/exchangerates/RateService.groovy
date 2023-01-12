@@ -23,7 +23,7 @@ class RateService {
             def date = LocalDate.parse(basicDate, pattern)
             def arr = stringData.split(" ")
             for (int i = 0; i < arr.length; i += 2) {
-                repository.save(new Currency(arr[i], arr[i + 1] as BigDecimal, date))
+                repository.save(new Currency(arr[i], arr[i + 1] as BigDecimal, date, arr[i] + "" + date.getDayOfYear().toString()))
             }
         }
     }
