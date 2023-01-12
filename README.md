@@ -42,33 +42,49 @@ to clear data **[DELETE]**
 ```
 /admin/rates
 ```
+
+## Passwords
+
+- Spring Security
+```
+user: admin
+password: admin
+```
+
+- Database
+
+```
+user: user
+password: password
+
+```
+
 ## About
 - Data is gathered from [this RSS feed](https://www.bank.lv/vk/ecb_rss.xml), and stored in a database. 
 - Liquibase is used for table creation
 
-- Web security to be added...
 
 ## JSON Example for /api/sek
 
 ```json
 [
     {
-        "id": 25,
-        "currency": "SEK",
-        "rate": 11.2580,
-        "date": "2023-01-06"
-    },
-    {
-        "id": 55,
-        "currency": "SEK",
-        "rate": 11.1960,
-        "date": "2023-01-09"
-    },
-    {
-        "id": 85,
+        "id": "SEK10",
         "currency": "SEK",
         "rate": 11.1963,
         "date": "2023-01-10"
+    },
+    {
+        "id": "SEK11",
+        "currency": "SEK",
+        "rate": 11.2783,
+        "date": "2023-01-11"
+    },
+    {
+        "id": "SEK9",
+        "currency": "SEK",
+        "rate": 11.1960,
+        "date": "2023-01-09"
     }
 ]
 ```
